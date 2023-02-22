@@ -1,8 +1,18 @@
+import Footer from './components/Footer';
+import Main from './components/Main';
+import Nav from './components/Nav';
+import Header from './components/Header';
+import Head from './components/Head';
+
 function App() {
   return (
-    <div className="App">
-      My Capstone project
-    </div>
+    <>
+      <Head />
+      <Nav />
+      <Header />
+      <Main />
+      <Footer />
+    </>
   );
 }
 
