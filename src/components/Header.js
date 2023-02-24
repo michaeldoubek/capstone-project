@@ -12,7 +12,7 @@ function Header() {
 
           <p>We are family owned Mediterranean restaurant focused on traditional recipes served with o modern twist.</p>
 
-          <ButtonLink href="reservations">Reserve a table</ButtonLink>
+          <ButtonLink href="/booking">Reserve a table</ButtonLink>
         </article>
         <aside>
           <img src={restaurantFood} alt="Bruchetta" />

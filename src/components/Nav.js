@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from './Nav.module.css';
 import logo from '../assets/logo.svg';
 import { ReactComponent as MenuIcon } from '../assets/icon-hamburger-menu.svg';
+import { Link } from 'react-router-dom';
 
 function Nav() {
   const [isOpened, setIsOpened] = useState(false);
@@ -10,9 +11,9 @@ function Nav() {
   return (
     <nav className={styles.nav}>
       <div className={styles.wrapper} aria-hidden>
-        <a href="#">
+        <Link to="/">
           <img src={logo} alt="Logo" />
-        </a>
+        </Link>
 
         <div className={styles.hamburger} onClick={toggleOpened}>
           <MenuIcon />
@@ -20,22 +21,22 @@ function Nav() {
 
         <menu className={isOpened ? styles.opened : null}>
           <li>
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="/about">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="#">Menu</a>
+            <Link to="/menu">Menu</Link>
           </li>
           <li>
-            <a href="#">Reservations</a>
+            <Link to="/booking">Reservations</Link>
           </li>
           <li>
-            <a href="#">Order online</a>
+            <Link to="/order-online">Order online</Link>
           </li>
           <li>
-            <a href="#">Login</a>
+            <Link to="#">Login</Link>
           </li>
         </menu>
       </div>

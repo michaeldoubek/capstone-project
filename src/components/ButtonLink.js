@@ -1,10 +1,11 @@
 import styles from './ButtonLink.module.css';
+import { Link } from 'react-router-dom';
 
 function ButtonLink(props) {
   return (
-    <a href={props.href} role="button" className={styles.buttonLink}>
+    <Link to={props.href} role="button" className={styles.buttonLink}>
       {props.children}
-    </a>
+    </Link>
   );
 }
 

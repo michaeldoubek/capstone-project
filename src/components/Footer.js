@@ -1,5 +1,6 @@
 import styles from './Footer.module.css';
 import logo from '../assets/logo.svg';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -12,19 +13,19 @@ function Footer() {
 
           <menu>
             <li>
-              <a href="#">Homepage</a>
+              <Link to="#">Homepage</Link>
             </li>
             <li>
-              <a href="#">Order a delivery</a>
+              <Link to="/order-online">Order a delivery</Link>
             </li>
             <li>
-              <a href="#">Reserve a table</a>
+              <Link to="/booking">Reserve a table</Link>
             </li>
             <li>
-              <a href="#">Our story</a>
+              <Link to="#">Our story</Link>
             </li>
             <li>
-              <a href="#">Career</a>
+              <Link to="#">Career</Link>
             </li>
           </menu>
         </nav>
@@ -42,19 +43,19 @@ function Footer() {
 
           <menu>
             <li>
-              <a href="facebook.com" target="_blank">
+              <a href="https://facebook.com" target="_blank" rel="noreferrer">
                 Facebook
               </a>
             </li>
 
             <li>
-              <a href="instagram.com" target="_blank">
+              <a href="https://instagram.com" target="_blank" rel="noreferrer">
                 Instagram
               </a>
             </li>
 
             <li>
-              <a href="twitter.com" target="_blank">
+              <a href="https://twitter.com" target="_blank" rel="noreferrer">
                 Twitter
               </a>
             </li>
