@@ -1,102 +1,90 @@
+import styles from './Main.module.css';
+import ButtonLink from './ButtonLink';
+import SpecialCard from './SpecialCard';
+import TestimonialCard from './TestimonialCard';
+import greekSalad from '../assets/greek-salad.jpg';
+import bruchetta from '../assets/bruchetta.svg';
+import lemonDessert from '../assets/lemon-dessert.jpg';
+import marioAndAdrianA from '../assets/mario-and-adrian-a.jpg';
+import marioAndAdrianB from '../assets/mario-and-adrian-b.jpg';
+
 function Main() {
   return (
-    <main>
-      <section id="highlights">
-        <header>
-          <h3>Specials</h3>
-          <a href="menu" role="button">
-            Online menu
-          </a>
-        </header>
+    <main className={styles.main}>
+      <section className={styles.highlights}>
+        <h3>This weeks specials</h3>
+        <ButtonLink href="menu">Online menu</ButtonLink>
 
-        <div className="foods">
-          <article className="card">
-            <img src="food1.jpg" alt="food" />
-            <div>
-              <h4>Greek Salad</h4>
-              <em>$12.99</em>
-            </div>
+        <SpecialCard
+          image={greekSalad}
+          title="Greek Salad"
+          price="12.99"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nisl nunc aliquet nisl, vitae aliquet nisl nunc vel nisl. Sed euismod, nunc vel tincidunt lacinia, nisl nunc aliquet nisl, vitae aliquet nisl nunc vel nisl."
+          href="menu"
+        />
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam</p>
-          </article>
+        <SpecialCard
+          image={bruchetta}
+          title="Bruchetta"
+          price="9.99"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nisl nunc aliquet nisl, vitae aliquet nisl nunc vel nisl. Sed euismod, nunc vel tincidunt lacinia, nisl nunc aliquet nisl, vitae aliquet nisl nunc vel nisl."
+          href="menu"
+        />
 
-          <article className="card">
-            <img src="food1.jpg" alt="food" />
-            <div>
-              <h4>Greek Salad</h4>
-              <em>$12.99</em>
-            </div>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam</p>
-          </article>
-
-          <article className="card">
-            <img src="food1.jpg" alt="food" />
-            <div>
-              <h4>Greek Salad</h4>
-              <em>$12.99</em>
-            </div>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam</p>
-          </article>
-        </div>
+        <SpecialCard
+          image={lemonDessert}
+          title="Lemon Dessert"
+          price="9.99"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nisl nunc aliquet nisl, vitae aliquet nisl nunc vel nisl. Sed euismod, nunc vel tincidunt lacinia, nisl nunc aliquet nisl, vitae aliquet nisl nunc vel nisl."
+          href="menu"
+        />
       </section>
-      <section id="testimonials">
+
+      <section className={styles.testimonials}>
         <h3>Testimonials</h3>
 
-        <div className="testimonials">
-          <article className="card">
-            <span>Rating</span>
-            <div className="reviewer">
-              <img src="reviewer.jpg" alt="" />
-              <strong>Name</strong>
-            </div>
+        <TestimonialCard
+          rating={5}
+          avatar="https://api.dicebear.com/5.x/avataaars/svg?seed=Luna"
+          name="Luna"
+          review="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nisl nunc aliquet nisl, vitae aliquet nisl nunc vel nisl. Sed euismod, nunc vel tincidunt lacinia, nisl nunc aliquet nisl, vitae aliquet nisl nunc vel nisl."
+        />
 
-            <p>Lorem ipsum</p>
-          </article>
+        <TestimonialCard
+          rating={4}
+          avatar="https://api.dicebear.com/5.x/avataaars/svg?seed=Harley"
+          name="Harley"
+          review="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nisl nunc aliquet nisl, vitae aliquet nisl nunc vel nisl. Sed euismod, nunc vel tincidunt lacinia, nisl nunc aliquet nisl, vitae aliquet nisl nunc vel nisl."
+        />
 
-          <article className="card">
-            <span>Rating</span>
-            <div className="reviewer">
-              <img src="reviewer.jpg" alt="" />
-              <strong>Name</strong>
-            </div>
-
-            <p>Lorem ipsum</p>
-          </article>
-
-          <article className="card">
-            <span>Rating</span>
-            <div className="reviewer">
-              <img src="reviewer.jpg" alt="" />
-              <strong>Name</strong>
-            </div>
-
-            <p>Lorem ipsum</p>
-          </article>
-
-          <article className="card">
-            <span>Rating</span>
-            <div className="reviewer">
-              <img src="reviewer.jpg" alt="" />
-              <strong>Name</strong>
-            </div>
-
-            <p>Lorem ipsum</p>
-          </article>
-        </div>
+        <TestimonialCard
+          rating={4}
+          avatar="https://api.dicebear.com/5.x/avataaars/svg?seed=Leo"
+          name="Leo"
+          review="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nisl nunc aliquet nisl, vitae aliquet nisl nunc vel nisl. Sed euismod, nunc vel tincidunt lacinia, nisl nunc aliquet nisl, vitae aliquet nisl nunc vel nisl."
+        />
       </section>
-      <section id="about">
+
+      <section className={styles.about}>
         <article>
           <h3>Little Lemon</h3>
           <h4>Chicago</h4>
 
-          <p>Lorem ipsum dolor sit amet</p>
+          <p>
+            Eius elit quo tota interesset suspendisse nonumy velit perpetua. Moderatius debet veri ullamcorper utamur
+            causae expetenda graeco esse. Tortor quot graeco oratio vis minim. Vituperata iaculis nihil non duis errem
+            neglegentur usu. Interesset mentitum dicat nonumes dolorem voluptaria.
+          </p>
+
+          <p>
+            Luptatum placerat facilis singulis ludus verterem potenti. Orci at definitiones dolore homero salutatus
+            tempus efficitur graeci scelerisque.
+          </p>
         </article>
 
         <aside>
-          <img src="about.jpg" alt="about" />
-          <img src="about2.jpg" alt="about" />
+          <img src={marioAndAdrianA} alt="about" />
+          <img src={marioAndAdrianB} alt="about" />
         </aside>
       </section>
     </main>

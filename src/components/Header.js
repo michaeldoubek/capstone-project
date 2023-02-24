@@ -1,19 +1,23 @@
+import styles from './Header.module.css';
+import restaurantFood from '../assets/restauranfood.jpg';
+import ButtonLink from './ButtonLink';
+
 function Header() {
   return (
-    <header>
-      <article>
-        <h1>Little Lemon</h1>
-        <h2>Chicago</h2>
+    <header className={styles.header}>
+      <div className={styles.wrapper} aria-hidden>
+        <article>
+          <h1>Little Lemon</h1>
+          <h2>Chicago</h2>
 
-        <p>Lorem ipsum dolor sit amet.</p>
+          <p>We are family owned Mediterranean restaurant focused on traditional recipes served with o modern twist.</p>
 
-        <a href="reservations" role="button">
-          Reserve a table
-        </a>
-      </article>
-      <aside>
-        <img src="hero.jpg" alt="hero" />
-      </aside>
+          <ButtonLink href="reservations">Reserve a table</ButtonLink>
+        </article>
+        <aside>
+          <img src={restaurantFood} alt="Bruchetta" />
+        </aside>
+      </div>
     </header>
   );
 }

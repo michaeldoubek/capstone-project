@@ -1,0 +1,10 @@
+.buttonLink {
+    background-color: #F4CE14;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    color: #222222;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
