@@ -1,6 +1,7 @@
 .testimonialCard {
     background-color: #EDEFEE;
     padding: 1rem;
+    border-radius: 1rem;
 }
 
 .testimonialCard figcaption {
