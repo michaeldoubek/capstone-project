@@ -3,13 +3,22 @@ import BookingForm from '../components/BookingForm';
 import Footer from '../components/Footer';
 import styles from './BookingPage.module.css';
 import { useReducer } from 'react';
+import { fetchAPI, submitAPI } from '../utils/api';
+import { useNavigate } from 'react-router-dom';
 
 function BookingPage() {
+  const navigate = useNavigate();
   const [availableTimes, dispatchAvailableTimes] = useReducer(
     (state, newDate) => updateTimes(newDate),
     [],
     initializeTimes,
   );
+
+  const handleSubmit = (formData) => {
+    if (submitAPI(formData)) {
+      navigate('/booking/confirmed');
+    }
+  };
 
   return (
     <>
@@ -19,7 +28,7 @@ function BookingPage() {
         <BookingForm
           availableTimes={availableTimes}
           dispatchAvailableTimes={dispatchAvailableTimes}
-          onSubmit={(data) => console.log(data)}
+          onSubmit={handleSubmit}
         />
       </main>
       <Footer />
@@ -27,24 +36,12 @@ function BookingPage() {
   );
 }
 
-export const updateTimes = (newDate) => {
-  return [
-    { value: '17:00', label: '17:00' },
-    { value: '18:00', label: '18:00' },
-    { value: '19:00', label: '19:00' },
-    { value: '20:00', label: '20:00' },
-    { value: '21:00', label: '21:00' },
-    { value: '22:00', label: '22:00' },
-  ];
-};
+export const updateTimes = (newDate) =>
+  timesListToSelectOptions(fetchAPI(new Date(newDate)));
 
-export const initializeTimes = () => [
-  { value: '17:00', label: '17:00' },
-  { value: '18:00', label: '18:00' },
-  { value: '19:00', label: '19:00' },
-  { value: '20:00', label: '20:00' },
-  { value: '21:00', label: '21:00' },
-  { value: '22:00', label: '22:00' },
-];
+export const initializeTimes = () =>
+  timesListToSelectOptions(fetchAPI(new Date()));
+const timesListToSelectOptions = (times) =>
+  times.map((time) => ({ value: time, label: time }));
 
 export default BookingPage;

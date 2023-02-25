@@ -13,9 +13,10 @@ function Select(props) {
         name={props.name}
         onChange={handleChange}
         className={styles.select}
+        required={props.required}
       >
         {props.options.map((option) => (
-          <option key={option.value} value={option.value}>
+          <option key={`${props.name}-${option.value}`} value={option.value}>
             {option.label}
           </option>
         ))}

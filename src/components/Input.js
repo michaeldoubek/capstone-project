@@ -15,6 +15,7 @@ function Input(props) {
         max={props.max}
         id={props.name}
         name={props.name}
+        required={props.required}
         onChange={handleChange}
         className={styles.input}
       />

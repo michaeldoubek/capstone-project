@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 
 function ButtonLink(props) {
   return (
-    <Link to={props.href} role="button" className={styles.button}>
+    <Link
+      to={props.href}
+      role="button"
+      className={styles.button}
+      aria-label="On Click"
+    >
       {props.children}
     </Link>
   );

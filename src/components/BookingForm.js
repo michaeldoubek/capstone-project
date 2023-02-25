@@ -38,6 +38,7 @@ function BookingForm(props) {
         label="Choose date"
         type="date"
         name="res-date"
+        required
         value={date}
         onChange={handleDateChange}
         error={dateError}
@@ -46,6 +47,7 @@ function BookingForm(props) {
         label="Choose time"
         name="res-time"
         options={props.availableTimes}
+        required
         value={time}
         onChange={setTime}
         error={timeError}
@@ -58,6 +60,7 @@ function BookingForm(props) {
         name="guests"
         min="1"
         max="10"
+        required
         value={guests}
         onChange={setGuests}
         error={guestsError}
@@ -67,6 +70,7 @@ function BookingForm(props) {
         label="Occasion"
         name="occasion"
         options={occasionOptions}
+        required
         value={occasion}
         onChange={setOccasion}
         error={occasionError}
@@ -82,24 +86,24 @@ const occasionOptions = [
   { value: 'anniversary', label: 'Anniversary' },
 ];
 
-const validateDate = (date) => {
+export const validateDate = (date) => {
   if (!date) return 'Please select a date';
   if (new Date(date) < new Date()) return 'Please select a future date';
   if (new Date(date).getDay() === 0) return 'We are closed on Sundays';
   return null;
 };
-const validateTime = (time) => {
+export const validateTime = (time) => {
   if (!time) return 'Please select a time';
   return null;
 };
-const validateGuests = (guests) => {
+export const validateGuests = (guests) => {
   if (!isNumeric(guests)) return 'Please enter a number';
   if (parseFloat(guests) < 1 || parseFloat(guests) > 10) {
     return 'Number of guests must be between 1 and 10';
   }
   return null;
 };
-const validateOccasion = (occasion) => {
+export const validateOccasion = (occasion) => {
   if (!occasion) return 'Please select an occasion';
   return null;
 };
