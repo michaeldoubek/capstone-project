@@ -3,7 +3,6 @@ import Select from './Select';
 import Button from './Button';
 import useFormField from '../hooks/useFormField';
 import isNumeric from '../utils/isNumeric';
-import { useState } from 'react';
 
 function BookingForm(props) {
   const [date, setDate, dateError] = useFormField(null, validateDate);
@@ -25,7 +24,12 @@ function BookingForm(props) {
     // Exit when validation fails
     if (dateError || timeError || guestsError || occasionError) return;
 
-    alert('Submitted');
+    props.onSubmit({
+      date,
+      time,
+      guests,
+      occasion,
+    });
   };
 
   return (
