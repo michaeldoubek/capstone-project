@@ -22,7 +22,14 @@ function BookingForm(props) {
     event.preventDefault();
 
     // Exit when validation fails
-    if (dateError || timeError || guestsError || occasionError) return;
+    // Validators are run again, to prevent sending empty form - validation on fields run only on touch.
+    if (
+      validateDate(date) ||
+      validateTime(time) ||
+      validateGuests(guests) ||
+      validateOccasion(occasion)
+    )
+      return;
 
     props.onSubmit({
       date,
